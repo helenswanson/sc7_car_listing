@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'car salesperson adds a new manufacturer', %Q(
+feature 'user adds a new manufacturer', %Q(
   As a car salesperson
   I want to record a car manufacturer
   So that I can keep track of the types of cars found in the lot
@@ -11,7 +11,11 @@ feature 'car salesperson adds a new manufacturer', %Q(
 # • If I do not specify the required information, I am presented with errors.
 # • If I specify the required information, the manufacturer is recorded and I am redirected to the index of manufacturers
 
-  scenario 'car salesperson adds a new manufacturer' do
+  before :each do
+    visit new_manufacturer_path
+  end
+
+  scenario 'user adds a new manufacturer' do
     manufacturer = FactoryGirl.create(:manufacturer)
 
     fill_in 'Name', with: manufacturer.name
@@ -22,7 +26,7 @@ feature 'car salesperson adds a new manufacturer', %Q(
     expect(page).to have_content manufacturer.name
   end
 
-  scenario 'car salesperson enters incomplete manufacturer info' do
+  scenario 'user enters incomplete manufacturer info' do
     click_on 'Create Manufacturer'
 
     expect(page).to_not have_content 'Success'
