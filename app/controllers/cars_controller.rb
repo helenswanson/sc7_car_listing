@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
   def index
-    @cars = Cars.all
+    @cars = Car.all
   end
 
   def new
