@@ -23,7 +23,7 @@ feature 'user adds a new car', %Q(
       fill_in 'Manufacturer', with: car.manufacturer
       fill_in 'Color', with: car.color
       fill_in 'Mileage', with: car.mileage
-      fill_in 'Description' with: car.description
+      fill_in 'Description', with: car.description
     end
 
     scenario 'user adds valid car year' do
