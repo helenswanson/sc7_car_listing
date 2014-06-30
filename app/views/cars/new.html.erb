@@ -1,0 +1,14 @@
+<h1>Add a Car</h1>
+
+<%= notice %>
+<%= alert %>
+
+<%= simple_form_for(@car) do |f| %>
+  <%= f.input :type %>
+  <%= f.input :manufacturer %>
+  <%= f.input :color %>
+  <%= f.input :year %>
+  <%= f.input :mileage %>
+  <%= f.input :color %>
+  <%= f.button :submit %>
+<% end %>
