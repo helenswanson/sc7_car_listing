@@ -34,6 +34,7 @@ group :development, :test do
 end
 
 gem 'simple_form'
+gem 'carmen-rails', '~> 1.0.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
