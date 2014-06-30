@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: sc7_car_listing_production
-  username: sc7_car_listing
-  password: <%= ENV['SC7_CAR_LISTING_DATABASE_PASSWORD'] %>
