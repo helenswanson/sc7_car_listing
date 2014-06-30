@@ -1,4 +1,5 @@
 class Car < ActiveRecord::Base
+  validates :type, presence: true
   validates :manufacturer, presence: true
   validates :color, presence: true
   validates :year, presence: true, inclusion: { within: 1920..Time.now.year }

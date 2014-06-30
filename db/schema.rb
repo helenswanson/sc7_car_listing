@@ -17,10 +17,12 @@ ActiveRecord::Schema.define(version: 20140629235449) do
   enable_extension "plpgsql"
 
   create_table "cars", force: true do |t|
+    t.string   "type",         null: false
     t.string   "manufacturer", null: false
-    t.string   "color"
+    t.string   "color",        null: false
     t.integer  "year",         null: false
     t.integer  "mileage",      null: false
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
