@@ -23,6 +23,7 @@ feature 'user adds a new car', %Q(
       fill_in 'Manufacturer', with: car.manufacturer
       fill_in 'Color', with: car.color
       fill_in 'Mileage', with: car.mileage
+      fill_in 'Description' with: car.description
     end
 
     scenario 'user adds valid car year' do
@@ -39,6 +40,7 @@ feature 'user adds a new car', %Q(
 
     scenario 'user enters invalid car year' do
       fill_in 'Year', with: 1919
+      click_on 'Create Car'
 
       expect(page).to_not have_content 'Success'
       expect(page).to have_content "can't be blank"
