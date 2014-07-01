@@ -18,12 +18,13 @@ feature 'user adds a new manufacturer', %Q(
   scenario 'user adds a new manufacturer' do
     manufacturer = FactoryGirl.create(:manufacturer)
 
-    fill_in 'Name', with: manufacturer.name
+    fill_in 'Model', with: manufacturer.name
     fill_in 'Country', with: manufacturer.country
     click_on 'Create Manufacturer'
 
     expect(page).to have_content 'Success'
-    expect(page).to have_content manufacturer.name
+    expect(page).to have_content manufacturer.model
+    expect(page).to have_content manufacturer.country
   end
 
   scenario 'user enters incomplete manufacturer info' do

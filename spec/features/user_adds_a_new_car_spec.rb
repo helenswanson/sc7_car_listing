@@ -19,8 +19,8 @@ feature 'user adds a new car', %Q(
       visit new_car_path
       car = FactoryGirl.create(:car)
 
-      fill_in 'Type', with: car.type
-      fill_in 'Manufacturer', with: car.manufacturer
+      fill_in 'Make', with: car.make
+      fill_in 'Model', with: car.model
       fill_in 'Color', with: car.color
       fill_in 'Mileage', with: car.mileage
       fill_in 'Description', with: car.description
@@ -31,8 +31,8 @@ feature 'user adds a new car', %Q(
       click_on 'Create Car'
 
       expect(page).to have_content 'Success'
-      expect(page).to have_content car.type
-      expect(page).to have_content car.manufacturer
+      expect(page).to have_content car.make
+      expect(page).to have_content car.model
       expect(page).to have_content car.color
       expect(page).to have_content car.year
       expect(page).to have_content car.mileage
@@ -43,7 +43,7 @@ feature 'user adds a new car', %Q(
       click_on 'Create Car'
 
       expect(page).to_not have_content 'Success'
-      expect(page).to have_content "can't be blank"
+      expect(page).to have_content "must be larger than"
     end
   end
 
